@@ -1,0 +1,45 @@
+##' @description Extract the model matrices related to the EV
+##'     parameters in an EV model.
+##'
+##' @details EVA regression models often use one formula for each EV
+##'     parameter e.g., \code{location}, \code{scale}, \code{shape}
+##'     for a model with GEV response.  Such a formula relates the
+##'     parameter \eqn{\theta_i} to a linear predictor
+##'     \eqn{\mathbf{x}^\top \boldsymbol{\psi}}{x^T \psi} where
+##'     \eqn{\mathbf{x}} is a vector of covariates and
+##'     \eqn{\boldsymbol{\psi}} is a vector of parameters or
+##'     "coefficients" related to the considered EV parameter.
+##'  
+##' @title Build or Extract Matrices for Regression Models
+##'
+##' @param object A possibly incomplete model object. This object
+##'     typically contains formulas related to the parameters of an
+##'     EV distributon.
+##' 
+##' @param ... Further arguments for methods. Most methods can use a
+##'     \code{data} formal argument which will be required to compute
+##'     the matrices for "new" values \eqn{\mathbf{x}^\star} of the
+##'     covariate vector.
+##'
+##' @return A named list of model matrices, one per EV parameter
+##'     \eqn{\theta_i}. The names of the list elements should be
+##'     consistent with the names retained for the EV parameters.
+##'     So the vector of names should be
+##'     \itemize{ 
+##'     \item{
+##'        \code{c("loc", "scale", "shape")} for a model with GEV
+##'        response,
+##'     }
+##'     \item{
+##'         \code{c("prob", "scale", "shape")} for a Non-Homogeneous
+##'         Poisson Process (NHPP) models, and
+##'     }
+##'     \item{
+##'         \code{c("rate", "scale", "shape")} for a Poisson-GP model.
+##'     }
+##'     }
+##' @export
+##' 
+modelMatrices <- function(object, ...) {
+    UseMethod("modelMatrices")
+}
