@@ -4,7 +4,7 @@ edit.*
 ## R package `{geneva}`
 
 `{geneva}` is a lightweight library defining S3 **gen**eric functions
-for **E**xtreme **V**alue **A**nalysis in order to avoid conflicts
+for **E**xtreme **V**alue **A**nalysis (EVA) in order to avoid conflicts
 between R packages devoted to EVA. It is comparable to the `{generics}`
 package.
 
@@ -25,7 +25,7 @@ enough this problem is easily fixed.
 
 ### Possible future generics
 
--   `qq` and `qq` as in the `{evd}` package or `PPlot` and `QQplot`.
+-   `qq` and `qq` as in the `{evd}` package or `PPplot` and `QQplot`.
 
 -   The `spacings` method.
 
@@ -33,15 +33,19 @@ enough this problem is easily fixed.
 
 Although this is not of our business, we encourage the authors of EV
 packages to consider some S3 methods, importing the corresponding
-generics from the relevant packages.
+generics from the relevant packages. Also remind that derived classes
+such as `"predict.<model_class>"` are very useful since one can write
+dedicated methods such as `plot` to display the predictions for a
+specific kind of models.
 
-#### Form `{stats}`
+#### From `{stats}`
 
 -   The methods `coef`, `logLik`, `AIC`, `BIC`, `anova`, `confint`,
     `predict` and more.
 
 -   The `influence` method is very important for EV models inasmuch the
-    results often strongly depend on a few extreme observations.
+    results often strongly depend on a few extreme observations. See
+    this method for the `"TVGEV"` class in the `{NSGEV}` package.
 
 -   The `residuals` method is useful to extract or compute (generalized)
     residuals.
