@@ -56,5 +56,5 @@ specific kind of models.
 
 #### From `{generics}`
 
--   The `components` method from for instance to extract trend an
+-   The `components` method can be used for instance to extract trend an
     seasonal components from fitted EV model objects.
