@@ -26,12 +26,12 @@ Fortunately enough this problem is easily fixed.
  
 ### Possible future generics 
 
-- `qq` and `qq` as in the `{evd}` package or `PPplot` and `QQplot`.
+- `pp` and `qq` as in the `{evd}` package or `PPplot` and `QQplot`.
  
 - The `spacings` method.
  
   
-### Other generics useful for EV models
+### Other generics useful for EVA models
 
 Although this is not of our business, we encourage the authors of EV
 packages to consider some S3 methods, importing the corresponding
@@ -42,8 +42,8 @@ specific kind of models.
 
 #### From `{stats}` 
 
-- The methods `coef`, `logLik`, `AIC`, `BIC`, `anova`, `confint`,
-  `predict` and more.
+- The methods `nobs`, `coef`, `logLik`, `AIC`, `BIC`, `anova`,
+  `confint`, `predict` and more.
 
 - The `influence` method is very important for EV models inasmuch the
   results often strongly depend on a few extreme observations. See
